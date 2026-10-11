@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors;
+}
+
+.btn-primary {
+  @apply bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg font-semibold shadow-sm shadow-brand-600/20 transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md hover:shadow-brand-600/30 active:translate-y-0 active:scale-[0.98] disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-sm;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-lg font-semibold transition-all duration-150 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] disabled:opacity-50 disabled:hover:translate-y-0;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-5 transition-shadow duration-200 hover:shadow-md;
+}
+
+.input {
+  @apply w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 transition-shadow duration-150 focus:outline-none focus:ring-2 focus:ring-brand-500;
+}
+
+.label {
+  @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1;
+}
+
+/* ---- Storefront (customer-facing) theme ----
+   Warm cream background + teal accent, pill-shaped buttons, rounded
+   category chips - matches the reference storefront design. Scoped under
+   .storefront so the owner dashboard keeps its existing indigo look. */
+.storefront {
+  @apply font-display bg-cream-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100;
+}
+
+/* Big storefront headings (hero titles, section titles, product names) get
+   the elegant Fraunces display serif instead of the body's Poppins - a
+   cheap, consistent way to make the whole e-commerce side feel more
+   boutique/stylish without touching every page. Plain tag selectors only
+   (h1/h2) - matching on the `font-display` utility class name itself here
+   would create a circular @apply dependency with the ".storefront { @apply
+   font-display ... }" rule above, so the few non-heading spots that want
+   this (logo wordmark, promo banner lines) use the standalone
+   .store-heading class instead - see StoreLayout.jsx/StoreHome.jsx. */
+.storefront h1,
+.storefront h2,
+.storefront .store-heading {
+  font-family: "Fraunces", ui-serif, Georgia, serif;
+}
+
+.store-btn-primary {
+  @apply bg-storeteal-500 hover:bg-storeteal-600 text-white px-6 py-2.5 rounded-full font-semibold shadow-sm shadow-storeteal-500/30 transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-storeteal-500/40 active:translate-y-0 active:scale-[0.98] disabled:opacity-50 disabled:hover:translate-y-0;
+}
+
+.store-btn-outline {
+  @apply border-2 border-storeteal-500 text-storeteal-600 hover:bg-storeteal-50 px-6 py-2.5 rounded-full font-semibold transition-all duration-150 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:hover:translate-y-0 dark:text-storeteal-400 dark:hover:bg-gray-900;
+}
+
+.store-card {
+  @apply bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
+}
+
+.store-pill {
+  @apply bg-storeteal-50 text-storeteal-700 dark:bg-gray-800 dark:text-storeteal-400 text-xs font-semibold px-3 py-1 rounded-full;
+}
+
+.store-input {
+  @apply w-full px-4 py-2.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-storeteal-400 text-sm;
+}
