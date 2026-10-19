@@ -80,5 +80,4 @@ Frontend (nginx) on port 80, backend on port 5000.
 ## Tech stack
 
 React 18 + Redux Toolkit + Tailwind CSS + HeroUI + Axios + React Router ·
-Node.js + Express + MongoDB Atlas + Mongoose · JWT + refresh tokens + bcrypt +
-Google OAuth2 · Docker + AWS-ready.
+Node.js + Express + MongoDB Atlas· JWT + refresh tokens + bcrypt + Docker
