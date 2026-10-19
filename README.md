@@ -17,9 +17,8 @@ npm run dev
 http://localhost:5000
 ```
 
-On every startup the backend automatically reconciles MongoDB indexes
-(`config/db.js` -> `Customer.syncIndexes()` etc.) — see "Bug fixes in this build"
-below for why that matters.
+
+
 
 ### 2. Frontend
 
@@ -27,8 +26,7 @@ below for why that matters.
 npm run dev                # http://localhost:5173
 ```
 
-The Vite dev server proxies `/api` and `/uploads` to `http://localhost:5000`, 
-open http://localhost:5173.
+
 
 
 Frontend (nginx) on port 80, backend on port 5000.
